@@ -1,0 +1,3 @@
+psql -h localhost -U postgresadmin --password -p 5432 postgresdb
+
+Password: admin123

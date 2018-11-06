@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-demo
+spec:
+  ports:
+  - name: spring-boot
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: spring-boot-demo
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: spring-boot-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spring-boot-demo
+    spec:
+      containers:
+      - name: spring-boot-demo
+        image: salehaly/spring-boot-demo:latest
+        imagePullPolicy: Never
+        envFrom:
+        - configMapRef:
+            name: spring-boot-demo-config-map
+        resources:
+          requests:
+            cpu: 100m
+            memory: 1Gi
+        ports:
+        - containerPort: 8080

@@ -1,1 +1,1 @@
-minikube start --memory 8192
+ minikube start --kubernetes-version v1.9.4 --memory 8192

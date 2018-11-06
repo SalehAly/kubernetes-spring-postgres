@@ -8,7 +8,7 @@ Spring boot app connecting to database along with yaml files for kubernetes conf
   - open a terminal  
 ``` sh
 $ minikube start 
-$ minikube eval $(minikube docker-env) 
+$ eval $(minikube docker-env) 
 $ build demo project with command ``` mvn install docker:build``` `
 $ kubectl apply -f postgres/volume.yaml
 $ kubectl apply -f postgres/postgres.yaml

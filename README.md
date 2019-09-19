@@ -12,6 +12,7 @@ $  minikube start --memory 8192
 $ eval $(minikube docker-env) 
 $ build demo project with command ``` mvn install docker:build``` `
 $ kubectl apply -f postgres/volume.yaml
+$ kubectl apply -f postgres-config.yaml
 $ kubectl apply -f postgres/postgres.yaml
 $ kubectl apply -f demo/kube-config/spring-boot-demo-config-map.yaml
 $ kubectl apply -f demo/kube-config/spring-boot-demo.yaml

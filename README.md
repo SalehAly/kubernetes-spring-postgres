@@ -5,9 +5,10 @@ Spring boot app connecting to database along with yaml files for kubernetes conf
 # Minikube POC
 
   - Install minikube  https://github.com/kubernetes/minikube/releases
+  - Install VirtualBox https://www.virtualbox.org/wiki/Downloads
   - open a terminal  
 ``` sh
-$ minikube start 
+$  minikube start --memory 8192
 $ eval $(minikube docker-env) 
 $ build demo project with command ``` mvn install docker:build``` `
 $ kubectl apply -f postgres/volume.yaml

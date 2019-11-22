@@ -11,12 +11,15 @@ spec:
     app: spring-boot-demo
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-boot-demo
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-demo
   template:
     metadata:
       labels:
